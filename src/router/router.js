@@ -1,22 +1,36 @@
-// React Router Paths
-
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../components/Main";
-import Quiz from "../components/Quiz";
-import Result from "../components/Result";
+import React, { lazy, Suspense } from "react";
 
+// * Import components using dynamic import and React.lazy
+const Main = lazy(() => import("../components/Main"));
+const Quiz = lazy(() => import("../components/Quiz"));
+const Result = lazy(() => import("../components/Result"));
+
+// * Create router configuration
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Main />
+      </Suspense>
+    ),
   },
   {
     path: "/quiz",
-    element: <Quiz />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Quiz />
+      </Suspense>
+    ),
   },
   {
     path: "/result",
-    element: <Result />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Result />
+      </Suspense>
+    ),
   },
 ]);
 
