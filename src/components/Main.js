@@ -5,8 +5,6 @@ import "./../styles/Main.css";
 const Main = () => {
   const inputRef = useRef(null);
 
-  console.log(inputRef);
-
   function startQuiz() {}
 
   return (
@@ -28,6 +26,7 @@ const Main = () => {
           className="userid"
           type="text"
           placeholder="Input Your User Name"
+          required
         />
       </form>
 
