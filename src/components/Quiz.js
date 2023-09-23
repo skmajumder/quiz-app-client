@@ -1,5 +1,5 @@
-import React from "react";
-import Questions from "./Questions";
+import React, { lazy } from "react";
+const Questions = lazy(() => import("./Questions"));
 
 const Quiz = () => {
   function handleNext() {
